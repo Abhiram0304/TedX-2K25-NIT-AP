@@ -3,7 +3,7 @@ import { AiOutlineCalendar } from "react-icons/ai";
 import { IoLocationOutline } from "react-icons/io5";
 import { CiUser } from "react-icons/ci";
 import { IoIosArrowRoundForward } from "react-icons/io";
-import Link from "next/link";
+
 export default function Event() {
   return (
     <>
@@ -43,9 +43,9 @@ export default function Event() {
         <span className=" h-full sm:w-[.2rem] bg-white"></span>
         <div className="flex h-full group w-full sm:w-[30%] justify-center items-center font-bold font-poppins">
           {" "}
-          <Link href="/booking">
+          {/* <Link href="/booking">
             <span>Register Now</span>
-          </Link>
+          </Link> */}
           <IoIosArrowRoundForward
             size={50}
             className="group-hover:text-tedred animate-pulse duration-150 "
