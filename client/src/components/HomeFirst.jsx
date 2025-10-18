@@ -13,7 +13,7 @@ export default function HomeFirst() {
       <img
         src="/images/main_page_image.png"
         alt="background"
-        className="object-cover object-center z-10 opacity-20 absolute inset-0 w-full h-full"
+        className="object-cover object-center z-10 opacity-20 absolute inset-0 w-full h-full md:opacity-15"
       />
 
       {/* main container */}
@@ -59,9 +59,9 @@ export default function HomeFirst() {
           </div>
         </div>
 
-        <div className="relative w-0 lg:w-[45%] overflow-hidden rounded-3xl shadow-2xl animate-fadein-slow">
+        <div className="relative w-0 lg:w-[45%] overflow-hidden rounded-3xl shadow-2xl animate-fadein-slow opacity-75 lg:scale-95">
           <img
-            src="/images/main_page_image.png"
+            src="/images/ted.png"
             width={1200}
             height={1200}
             className="w-full h-auto object-contain object-center"
