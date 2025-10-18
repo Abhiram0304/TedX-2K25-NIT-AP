@@ -1,9 +1,8 @@
-"use client";
 import { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { IoIosClose } from "react-icons/io";
 gsap.registerPlugin(ScrollTrigger);
 export default function NavBar() {
@@ -65,12 +64,12 @@ export default function NavBar() {
             <Link href="/speakers">Speakers</Link>
           </li>
           <li className="nav-link">
-            <Link href="/about" scroll={true}>
+            <Link href="/about">
               About
             </Link>
           </li>
           <li className="nav-link">
-            <Link href="#contact" scroll={true}>
+            <Link href="#contact">
               Connect with us
             </Link>
           </li>
@@ -121,7 +120,6 @@ export default function NavBar() {
             <Link
               href="#contact"
               onClick={() => setIsOpen(false)}
-              scroll={true}
             >
               CONTACT
             </Link>

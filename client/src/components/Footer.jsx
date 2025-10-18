@@ -100,11 +100,9 @@ import {
 } from "react-icons/io5";
 import { MdOutlineLink } from "react-icons/md";
 import React from "react";
-// import logoWhite from "../../public/images/logo-white.png";
-import Image from "next/image";
 import GetYourTickets from "./GetYourTickets";
 import { FaInstagram } from "react-icons/fa6";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (

@@ -1,10 +1,9 @@
-"use client";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
-import { data } from "@/data/about";
+import { data } from "../data/about";
 const VerticalAnimation = () => {
   const svgRefs = useRef([]);
   const sectionsRef = useRef([]);

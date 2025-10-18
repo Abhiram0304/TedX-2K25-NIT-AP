@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+@theme {
+  --color-tedred: #E62B1E; /* TED Red  ff2b06*/
+}

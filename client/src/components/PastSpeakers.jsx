@@ -1,7 +1,5 @@
-import { speakersData } from "@/data/speakersData";
-import Image from "next/image";
-import { Syne } from "next/font/google";
-const syne = Syne({ subsets: ["latin"] });
+import { speakersData } from "../data/speakersData";
+const syne = 'font-syne'
 
 const PastSpeakers = () => {
   return (
@@ -9,7 +7,7 @@ const PastSpeakers = () => {
       <div className="w-full minh-h-screen flex flex-col justify-center gap-5 px-4 sm:px-20 bg-black">
         <div className="gap-3 flex flex-col">
           <p
-            className={`text-2xl sm:text-4xl font-poppins text-white bg-black font-bold ${syne.className}`}
+            className={`text-2xl sm:text-4xl font-poppins text-white bg-black font-bold ${syne}`}
           >
             PRESENT SPEAKERS
           </p>
@@ -21,7 +19,7 @@ const PastSpeakers = () => {
         >
           {speakersData[2024].map((speaker, index) => (
             <div key={index} className="p-3">
-              <Image
+              <img
                 src={speaker.pic}
                 alt={speaker.name}
                 width="500"
