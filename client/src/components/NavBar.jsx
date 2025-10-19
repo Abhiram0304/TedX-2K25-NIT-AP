@@ -10,7 +10,7 @@ export default function NavBar() {
   useGSAP(() => {
     gsap.to(nav.current, {
       scrollTrigger: {
-        trigger: ".title",
+        trigger: "#about_start",
         start: "top center",
         // markers: true,
         scrub: true,
