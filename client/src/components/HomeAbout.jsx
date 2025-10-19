@@ -45,7 +45,7 @@ const VerticalAnimation = () => {
   }, []);
 
   return (
-    <div className=" relative flex mt-[5rem] flex-col items-start justify-center  h-max overflow-clip p-3 sm:p-5 bg-black">
+    <div id="about_start" className=" relative flex mt-[5rem] flex-col items-start justify-center  h-max overflow-clip p-3 sm:p-5 bg-black">
       {data.map((item, index) => (
         <div
           key={index}

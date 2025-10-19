@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@layer components {
+  .nav-link {
+    @apply hover:text-[#FF2b06] duration-150;
+  }
+  .side-link {
+    @apply hover:text-[#FF2b06] duration-[500ms];
+  }
+  .ted-button {
+    @apply md:w-[15rem] h-[3rem] text-center bg-tedred backdrop-filter bg-opacity-25 backdrop-blur-2xl  text-white p-2 rounded-md font-bold font-helvitica text-[0.75rem] sm:text-[1.2rem];
+  }
+  .card {
+    @apply duration-[205ms];
+  }
+  .foot-link {
+    @apply duration-150 hover:scale-95;
+  }
+}
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@font-face {
+  font-family: "helvitica";
+  src: url("../fonts/helvetica-255/Helvetica-Bold.ttf");
+}
+#sideBar:has(li:hover) .side-link:not(:hover) {
+  /* scale: 0.8; */
+  opacity: 0.7;
+  font-weight: 100;
+  /* duration: 100; */
+  /* animation-duration: 1s; */
+  font-color: grey;
+  font-weight: 100;
+  ransition-timing-function: ease-in-out;
+}
+#pastSpeakers:has(div:hover) .card:not(:hover) {
+  scale: 0.98;
+  opacity: 0.7;
+  font-color: grey;
+  transition:
+    transform 200ms ease-in-out,
+    opacity 200ms ease-in-out;
+}
+/* .noise {
+  background: linear-gradient(
+      160deg,
+      rgba(126, 0, 0, 0.609),
+      rgb(32, 1, 0),
+      rgb(0, 0, 0)
+    ),
+    url(../../public/images/noise.svg);
+} */
+body{
+  background:black;
+}

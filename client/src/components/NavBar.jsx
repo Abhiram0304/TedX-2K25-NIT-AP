@@ -34,9 +34,9 @@ export default function NavBar() {
         className="z-20 fixed top-0 flex justify-between p-2 items-center h-[8rem] w-full "
       >
         {/* <div className="z-10 sticky top-0 bg-black/95 bg-opacity-80 backdrop-blur flex justify-between p-2 items-center h-[5rem] w-full "> */}
-        <div className="sm:pl-[3rem] flex gap-2 pl-6 justify-start ">
+        <div className="sm:pl-[3rem] flex gap-2 pl-6 justify-start">
           {/* <div className="w-[5rem] bg-green-100"></div> */}
-          <Link href={"/"}>
+          <Link to={"/"}>
             <div className="flex flex-col justify-center gap-1">
               <div className="flex flex-col gap-2">
                 <div className="font-helvetica font-extrabold text-[1.8rem] text-[#FF2B06] -mb-1">
@@ -58,18 +58,18 @@ export default function NavBar() {
         </div>
         <ul className="text-white h-full hidden sm:flex items-center gap-6 text-[1.1rem] pr-[3rem]">
           <li className="nav-link">
-            <Link href="/">Home</Link>
+            <Link to="/">Home</Link>
           </li>
           <li className="nav-link">
-            <Link href="/speakers">Speakers</Link>
+            <Link to="/speakers">Speakers</Link>
           </li>
           <li className="nav-link">
-            <Link href="/about">
+            <Link to="/about">
               About
             </Link>
           </li>
           <li className="nav-link">
-            <Link href="#contact">
+            <Link to="#contact">
               Connect with us
             </Link>
           </li>
@@ -97,28 +97,28 @@ export default function NavBar() {
             />
           </li>
           <li className="side-link">
-            <Link href="/" onClick={() => setIsOpen(false)}>
+            <Link to="/" onClick={() => setIsOpen(false)}>
               HOME
             </Link>
           </li>
           <li className="side-link">
-            <Link href="/speakers" onClick={() => setIsOpen(false)}>
+            <Link to="/speakers" onClick={() => setIsOpen(false)}>
               SPEAKERS
             </Link>
           </li>
           {/* <li className="side-link"> */}
-          {/*   <Link href="/sponsers" onClick={() => setIsOpen(false)}> */}
+          {/*   <Link to="/sponsers" onClick={() => setIsOpen(false)}> */}
           {/*     SPONSORS */}
           {/*   </Link> */}
           {/* </li> */}
           <li className="side-link">
-            <Link href="/about" onClick={() => setIsOpen(false)}>
+            <Link to="/about" onClick={() => setIsOpen(false)}>
               ABOUT
             </Link>
           </li>
           <li className="side-link">
             <Link
-              href="#contact"
+              to="#contact"
               onClick={() => setIsOpen(false)}
             >
               CONTACT
