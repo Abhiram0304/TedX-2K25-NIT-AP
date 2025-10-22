@@ -24,7 +24,7 @@ function AboutPage() {
 
       <div className="flex flex-col items-center justify-around w-full">
         <TeamSection title="Core Team" teamMembers={teamData.Core} />
-        <TeamSection title="Curation Team" teamMembers={teamData.Curation} />
+        {/* <TeamSection title="Curation Team" teamMembers={teamData.Curation} />
         <TeamSection title="Web Dev Team" teamMembers={teamData.WebDev} />
         <TeamSection
           title="Graphic Design Team"
@@ -37,13 +37,13 @@ function AboutPage() {
         <TeamSection
           title="Stage Operations Team"
           teamMembers={teamData.Stage}
-        />
-        <TeamSection
+        /> */}
+        {/* <TeamSection
           title="Social Media and Videography Team"
           teamMembers={teamData.sm}
         />
 
-        <TeamSection title="Event Management Team" teamMembers={teamData.em} />
+        <TeamSection title="Event Management Team" teamMembers={teamData.em} /> */}
 
       </div>
     </section>

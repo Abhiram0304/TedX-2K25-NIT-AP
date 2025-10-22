@@ -40,7 +40,7 @@ export default function HomeFirst() {
 
           <div className="flex flex-col lg:flex-row md:flex-wrap gap-4 mt-10 animate-slide-up md:mt-4">
             {[
-              { Icon: AiOutlineCalendar, text: "1st November, 2-6 PM, 2025" },
+              { Icon: AiOutlineCalendar, text: "28th October, 2-6 PM, 2025" },
               { Icon: IoLocationOutline, text: "NIT Andhra Pradesh" },
               { Icon: CiUser, text: "6 Speakers" },
             ].map(({ Icon, text }, i) => (

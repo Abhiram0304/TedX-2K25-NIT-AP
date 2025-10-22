@@ -8,6 +8,13 @@ import ms from "../../public/images/speakers/2024/ms.jpg";
 import va from "../../public/images/speakers/2024/va.jpg";
 import sc from "../../public/images/speakers/2024/sc.jpg";
 import js from "../../public/images/speakers/2024/js.png";
+import am from "../../public/images/speakers/2025/Avinash mada.jpg";
+import pb from "../../public/images/speakers/2025/Pattabiraman.jpg";
+import ssg from "../../public/images/speakers/2025/shakthisreegopalan.jpg";
+import vg from "../../public/images/speakers/2025/Vama Gaur.jpg";
+import vd from "../../public/images/speakers/2025/vanitha-datla.jpg";
+import vkd from "../../public/images/speakers/2025/Vivekananda Gadiyaram.jpg"
+
 export const speakersData = {
   2019: [
     {
@@ -72,6 +79,44 @@ export const speakersData = {
       profession: " CEO and Chairman, ISCEA India",
       info: "Supply Chain and Sustainability Leader with IBM",
       pic: sc,
+    },
+  ],
+  2025: [
+    {
+      name: "Avinash Mada",
+      profession: "CEO of Freedom With AI",
+      info: "",
+      pic: am,
+    },
+    {
+      name: "Vama Gaur",
+      profession: "Retired Deputy Commandant Of Indian Coast Gaurd",
+      info: "",
+      pic: vg,
+    },
+    {
+      name: "Dr. Vivekananda Gadiyaram",
+      profession: "Founder Of ARK Reflections IAS Academy",
+      info: "",
+      pic: vkd,
+    },
+    {
+      name: "Vanitha Datla",
+      profession: "Vice Chairperson And Managing Director Of Elico Limited",
+      info: "",
+      pic: vd,
+    },
+    {
+      name: "Shakthisree Gopalan",
+      profession: "Singer, Composer And Song Writer",
+      info: "",
+      pic: ssg,
+    },
+    {
+      name: "Dr. M.Pattabhiraman ",
+      profession: "Founder, Managing Editor And Author Of freefinacal.com",
+      info: "",
+      pic: pb,
     },
   ],
 };

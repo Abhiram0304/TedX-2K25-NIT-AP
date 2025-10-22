@@ -17,8 +17,7 @@ const TeamSection = ({ title, teamMembers }) => {
             <img
               src={member.pic}
               alt={member.name}
-              className="rounded-full filter grayscale 
-              "
+              className="w-32 h-32 rounded-full object-cover filter grayscale"
               width={128}
               height={128}
             />

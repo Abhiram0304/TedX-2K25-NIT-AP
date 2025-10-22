@@ -1,16 +1,15 @@
-"use client";
-
 import React, { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import { IoIosArrowRoundBack } from "react-icons/io";
 
 export default function BookingPage() {
-  const router = useRouter();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
+    rollNo:"",
     email: "",
     phone: "",
-    tickets: 1,
+    tickets: 1, // fixed to 1 ticket
   });
 
   const handleInputChange = (e) => {
@@ -24,18 +23,18 @@ export default function BookingPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     sessionStorage.setItem("bookingData", JSON.stringify(formData));
-    router.push("/payment");
+    navigate("/payment"); // navigate to payment page
   };
 
-  const ticketPrice = 1; // Rs 1 per ticket as mentioned
-  const totalAmount = formData.tickets * ticketPrice;
+  const ticketPrice = 150; // ₹150 per ticket
+  const totalAmount = ticketPrice; // always 1 ticket
 
   return (
     <div className="min-h-screen bg-black text-white">
       <div className="container mx-auto px-4 py-8">
         <button
-          onClick={() => router.back()}
-          className="flex items-center gap-2 text-tedred hover:text-red-400 mb-8"
+          onClick={() => navigate("/")} // go back
+          className="flex items-center gap-2 text-tedred hover:text-red-400 mb-8 pt-25"
         >
           <IoIosArrowRoundBack size={24} />
           Back
@@ -44,10 +43,10 @@ export default function BookingPage() {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 font-poppins">
-            Book Your Tickets
+            Book Your Ticket
           </h1>
           <p className="text-gray-300 text-lg">
-            TEDx NIT Andhra Pradesh - October 5th, 2024
+            TEDx NIT Andhra Pradesh — October 28th, 2025
           </p>
         </div>
 
@@ -66,6 +65,22 @@ export default function BookingPage() {
                 required
                 className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:border-tedred text-white"
                 placeholder="Enter your full name"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="rollNo" className="block text-sm font-medium mb-2">
+                Roll Number *
+              </label>
+              <input
+                type="text"
+                id="rollNo"
+                name="rollNo"
+                value={formData.rollNo}
+                onChange={handleInputChange}
+                required
+                className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:border-tedred text-white"
+                placeholder="Enter your Roll Number"
               />
             </div>
 
@@ -101,32 +116,13 @@ export default function BookingPage() {
               />
             </div>
 
-            <div>
-              <label htmlFor="tickets" className="block text-sm font-medium mb-2">
-                Number of Tickets *
-              </label>
-              <select
-                id="tickets"
-                name="tickets"
-                value={formData.tickets}
-                onChange={handleInputChange}
-                required
-                className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:border-tedred text-white"
-              >
-                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
-                  <option key={num} value={num}>
-                    {num} {num === 1 ? "Ticket" : "Tickets"}
-                  </option>
-                ))}
-              </select>
-            </div>
-
+            {/* Order Summary */}
             <div className="bg-gray-800 p-6 rounded-lg border border-gray-600">
               <h3 className="text-lg font-semibold mb-4">Order Summary</h3>
               <div className="space-y-2">
                 <div className="flex justify-between">
-                  <span>Tickets ({formData.tickets})</span>
-                  <span>₹{ticketPrice} × {formData.tickets}</span>
+                  <span>Tickets (1)</span>
+                  <span>₹{ticketPrice}</span>
                 </div>
                 <div className="border-t border-gray-600 pt-2">
                   <div className="flex justify-between text-lg font-bold">

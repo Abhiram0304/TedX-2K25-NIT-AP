@@ -130,7 +130,7 @@ export default function Footer() {
       <div className="flex flex-col-reverse gap-5 sm:flex-row items-center sm:items-start justify-between px-3 pt-7 sm:pt-0 sm:text-left text-center sm:px-7">
         <p className="text-neutral-500 leading-[1.6]">
           This independent TEDx event is operated under license from TED. <br />
-          &copy; 2024 TEDxNITAndhraPradesh
+          &copy; 2025 TEDxNITAndhraPradesh
         </p>
         <div className="flex flex-row items-center gap-4">
           <button className="group inline-flex items-center">

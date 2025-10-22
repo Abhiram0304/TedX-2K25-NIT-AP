@@ -17,7 +17,7 @@ const PastSpeakers = () => {
           id="pastSpeakers"
           className="w-[70%] mx-auto py-10 grid sm:grid-cols-2 md:grid-cols-3"
         >
-          {speakersData[2024].map((speaker, index) => (
+          {speakersData[2025].map((speaker, index) => (
             <div key={index} className="p-3">
               <img
                 src={speaker.pic}
