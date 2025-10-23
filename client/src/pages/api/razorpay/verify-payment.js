@@ -7,6 +7,8 @@ const razorpay = new Razorpay({
   key_secret: process.env.RAZORPAY_KEY_SECRET,
 });
 
+let serialNo = 1;
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -51,6 +53,7 @@ export default async function handler(req, res) {
                 order_id: razorpay_order_id,
                 amount: amount || 1, // Default amount if not provided
               },
+              serialNo: ++serialNo,
             }),
           });
           

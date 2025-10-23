@@ -8,7 +8,7 @@ dotenv.config();
 const router = express.Router();
 
 // This is for tsting purposes only. Must be linked wih db or local file reads for permenant mem
-let lastSerialNo = 0
+let lastSerialNo = 1
 
 // ✅ Send Confirmation Email
 router.post("/send-confirmation-email", async (req, res) => {
