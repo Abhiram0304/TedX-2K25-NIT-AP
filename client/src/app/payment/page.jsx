@@ -95,6 +95,7 @@ export default function PaymentPage() {
         notes: {
           address: "NIT Andhra Pradesh",
           tickets: bookingData.tickets.toString(),
+          rollNo: bookingData.rollNo,
         },
         theme: { color: "#dc2626" },
         modal: {
