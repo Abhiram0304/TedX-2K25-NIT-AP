@@ -7,10 +7,8 @@ dotenv.config();
 
 const router = express.Router();
 
-// This is for tsting purposes only. Must be linked wih db or local file reads for permenant mem
 let lastSerialNo = 1
 
-// ✅ Send Confirmation Email
 router.post("/send-confirmation-email", async (req, res) => {
   try {
     const { bookingData, paymentData } = req.body;
@@ -31,7 +29,7 @@ router.post("/send-confirmation-email", async (req, res) => {
 
     await transporter.verify();
 
-    const htmlContent = generateBookingConfirmationEmail(bookingData, paymentData);
+    const htmlContent = generateBookingConfirmationEmail(bookingData, paymentData, serialNo);
 
     const mailOptions = {
       from: {
@@ -52,7 +50,6 @@ router.post("/send-confirmation-email", async (req, res) => {
     });
   } catch (error) {
     console.error("Error sending email:", error);
-    //lastSerialNo--;
     res.status(500).json({
       success: false,
       error: "Failed to send confirmation email",
