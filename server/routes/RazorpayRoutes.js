@@ -10,6 +10,7 @@ dotenv.config();
 const router = express.Router();
 const { generateBookingConfirmationEmail } = require("../utils/emailTemplate");
 
+let serialNo = 1;
 
 const razorpay = new Razorpay({
   key_id: process.env.RAZORPAY_KEY_ID,
@@ -66,25 +67,6 @@ router.post("/verify-payment", async (req, res) => {
     const isAuthentic = expectedSignature === razorpay_signature;
 
     if (isAuthentic) {
-      // ✅ Send confirmation email via internal API call
-      // if (bookingData && bookingData.email) {
-      //   try {
-      //     const emailResponse = await axios.post(
-      //       `${process.env.FRONTEND_URL}/api/send-confirmation-email`,
-      //       {
-      //         bookingData,
-      //         paymentData: {
-      //           payment_id: razorpay_payment_id,
-      //           order_id: razorpay_order_id,
-      //           amount: amount || 1,
-      //         },
-      //       }
-      //     );
-      //     console.log("Email response:", emailResponse.data);
-      //   } catch (err) {
-      //     console.error("Error sending confirmation email:", err.message);
-      //   }
-      // }
 
       const transporter = nodemailer.createTransport({
         service: "gmail",
@@ -98,7 +80,7 @@ router.post("/verify-payment", async (req, res) => {
         payment_id: razorpay_payment_id,
         order_id: razorpay_order_id,
         amount: amount || 1,
-      });
+      }, serialNo++);
 
       await transporter.sendMail({
         from: {

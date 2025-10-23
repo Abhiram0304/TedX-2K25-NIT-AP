@@ -11,7 +11,7 @@ function generateBookingConfirmationEmail(bookingData, paymentData, serialNo) {
       <li><strong>Student Roll NO:</strong> ${bookingData.rollNo}</li>
       <li><strong>Booking ID:</strong> ${paymentData.order_id}</li>
       <li><strong>Payment ID:</strong> ${paymentData.payment_id}</li>
-      <li><strong>Ticket No:</strong> ${bookingData.serialNo}</li>
+      <li><strong>Ticket No:</strong> ${serialNo}</li>
     </ul>
 
     <h3>Event Details:</h3>
