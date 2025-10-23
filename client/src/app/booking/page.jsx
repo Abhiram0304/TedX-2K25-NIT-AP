@@ -9,6 +9,7 @@ export default function BookingPage() {
     rollNo:"",
     email: "",
     phone: "",
+    serialNo: 0, // hidden in form. meant for booking data
     tickets: 1, // fixed to 1 ticket
   });
 
