@@ -25,6 +25,8 @@ router.post("/send-confirmation-email", async (req, res) => {
       },
     });
 
+    console.log("THIS IS CALLED");
+
     bookingData.serialNo = ++lastSerialNo;
 
     await transporter.verify();
