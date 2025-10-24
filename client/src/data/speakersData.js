@@ -113,8 +113,8 @@ export const speakersData = {
       pic: ssg,
     },
     {
-      name: "Dr. M.Pattabhiraman ",
-      profession: "Founder, Managing Editor And Author Of freefinacal.com",
+      name: "Prof. M.Pattabhiraman ",
+      profession: "Founder, Managing Editor, and Author of FreeFinCal.com; Professor, IIT Madras.",
       info: "",
       pic: pb,
     },

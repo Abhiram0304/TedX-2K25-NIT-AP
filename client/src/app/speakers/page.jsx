@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { speakersData } from "../../data/speakersData";
 
 const SpeakersPage = () => {
-  const [selectedYear, setSelectedYear] = useState(2024);
+  const [selectedYear, setSelectedYear] = useState(2025);
   const date = new Date();
   return (
     <div className="bg-black text-white min-h-screen relative p-10 sm:p-20 py-40 mt-15">

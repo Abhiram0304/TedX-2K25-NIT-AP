@@ -4,7 +4,8 @@ import { IoIosArrowRoundBack } from "react-icons/io";
 import axios from "axios";
 
 // const backend = "http://localhost:3000";
-const backend = "http://3.111.246.22:3000"
+// const backend = "http://3.111.246.22:3000"
+const backend = "https://tedx.hmsnitap.in"
 
 export default function PaymentPage() {
   const navigate = useNavigate();
@@ -95,7 +96,7 @@ export default function PaymentPage() {
         notes: {
           address: "NIT Andhra Pradesh",
           tickets: bookingData.tickets.toString(),
-          rollNo: bookingData.rollNo,
+          roll_number: bookingData.rollNo.toString(),
         },
         theme: { color: "#dc2626" },
         modal: {

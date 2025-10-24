@@ -43,7 +43,7 @@ export default function NavBar() {
                   TED<sup>x</sup>
                 </div>
                 <div className="font-light text-[1.4rem] text-white -mt-3">
-                  NITAndhraPradesh
+                  NIT Andhra Pradesh
                 </div>
               </div>
 
@@ -68,11 +68,11 @@ export default function NavBar() {
               About
             </Link>
           </li>
-          <li className="nav-link">
+          {/* <li className="nav-link">
             <Link to="#contact">
               Connect with us
             </Link>
-          </li>
+          </li> */}
         </ul>
 
         <div
@@ -116,14 +116,14 @@ export default function NavBar() {
               ABOUT
             </Link>
           </li>
-          <li className="side-link">
+          {/* <li className="side-link">
             <Link
               to="#contact"
               onClick={() => setIsOpen(false)}
             >
               CONTACT
             </Link>
-          </li>
+          </li> */}
         </ul>
       </div>
     </>

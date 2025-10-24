@@ -22,7 +22,7 @@ export default function HomeFirst() {
         <div className="flex flex-col items-center lg:items-start md:gap-4 lg:gap-6 w-full lg:w-[55%]">
           <div className="relative">
             <h1 className={`text-4xl sm:text-4xl md:text-4xl lg:text-6xl font-extrabold bg-gradient-to-r from-red-600 via-red-550 to-red-500 bg-clip-text text-transparent tracking-tight ${syne} animate-text-reveal`} >
-              TESSELATE
+              TESSELLATE
             </h1>
             <span className="absolute left-0 bottom-0 h-[3px] w-0 bg-gradient-to-r from-red-500 to-yellow-400 animate-line-expand"></span>
           </div>
