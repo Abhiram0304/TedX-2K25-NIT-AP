@@ -3,21 +3,21 @@ const Razorpay = require("razorpay");
 const crypto = require("crypto");
 const axios = require("axios");
 const dotenv = require("dotenv");
-const nodemailer = require("nodemailer");
+// const nodemailer = require("nodemailer"); 
+const { sendTicketEmail } = require("../utils/ticketService"); 
 
 dotenv.config();
 
 const router = express.Router();
-const { generateBookingConfirmationEmail } = require("../utils/emailTemplate");
+//  const { generateBookingConfirmationEmail } = require("../utils/emailTemplate");
 
-let serialNo = 1;
+let serialNo = 42; 
 
 const razorpay = new Razorpay({
   key_id: process.env.RAZORPAY_KEY_ID,
   key_secret: process.env.RAZORPAY_KEY_SECRET,
 });
 
-// ✅ Create Order
 router.post("/create-order", async (req, res) => {
   try {
     const { amount, currency = "INR", receipt } = req.body;
@@ -27,7 +27,7 @@ router.post("/create-order", async (req, res) => {
     }
 
     const options = {
-      amount: amount * 100, // paise
+      amount: amount * 100, 
       currency,
       receipt,
       notes: {
@@ -43,15 +43,14 @@ router.post("/create-order", async (req, res) => {
   }
 });
 
-// ✅ Verify Payment
+// ✅ Verify Payment (This route is UPDATED)
 router.post("/verify-payment", async (req, res) => {
   try {
     const {
       razorpay_order_id,
       razorpay_payment_id,
       razorpay_signature,
-      bookingData,
-      amount,
+      bookingData, 
     } = req.body;
 
     if (!razorpay_order_id || !razorpay_payment_id || !razorpay_signature) {
@@ -68,42 +67,33 @@ router.post("/verify-payment", async (req, res) => {
 
     if (isAuthentic) {
 
-      const transporter = nodemailer.createTransport({
-        service: "gmail",
-        auth: {
-          user: process.env.EMAIL_USER,
-          pass: process.env.EMAIL_PASS,
-        },
-      });
+      const ticketDetails = {
+        name: bookingData.name,
+        rollNo: bookingData.rollNo,
+        serialNo: serialNo++, 
+        email: bookingData.email,
+        paymentId: razorpay_order_id, 
+      };
 
-      const htmlContent = generateBookingConfirmationEmail(bookingData, {
-        payment_id: razorpay_payment_id,
-        order_id: razorpay_order_id,
-        amount: amount || 1,
-      }, serialNo++);
-
-      await transporter.sendMail({
-        from: {
-          name: "TEDx NIT Andhra Pradesh",
-          address: process.env.EMAIL_USER,
-        },
-        to: bookingData.email,
-        subject: `TEDx NIT Andhra Pradesh - Booking Confirmation (${razorpay_order_id})`,
-        html: htmlContent,
-      });
-
+      await sendTicketEmail(ticketDetails);
+      
       res.status(200).json({
         success: true,
         message: "Payment verified successfully",
         payment_id: razorpay_payment_id,
         order_id: razorpay_order_id,
       });
+
     } else {
       res.status(400).json({ success: false, error: "Payment verification failed" });
     }
   } catch (error) {
     console.error("Error verifying payment:", error);
-    res.status(500).json({ success: false, error: "Failed to verify payment" });
+    // Send a generic error to the frontend
+    res.status(500).json({ 
+      success: false, 
+      error: "Failed to verify payment or send email" 
+    });
   }
 });
 
