@@ -11,7 +11,7 @@ dotenv.config();
 const router = express.Router();
 //  const { generateBookingConfirmationEmail } = require("../utils/emailTemplate");
 
-let serialNo = 42; 
+let serialNo = 187; 
 
 const razorpay = new Razorpay({
   key_id: process.env.RAZORPAY_KEY_ID,

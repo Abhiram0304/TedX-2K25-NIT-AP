@@ -5,7 +5,8 @@ import axios from "axios";
 
 // const backend = "http://localhost:3000";
 // const backend = "http://3.111.246.22:3000"
-const backend = "https://tedx.hmsnitap.in"
+// const backend = "https://tedx.hmsnitap.in"
+const backend = "https://tedx.rahulkoyee.top"
 
 export default function PaymentPage() {
   const navigate = useNavigate();
